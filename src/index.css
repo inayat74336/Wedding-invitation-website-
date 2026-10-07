@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-script: 'Alex Brush', cursive;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --color-ivory: #FAF7F2;
+    --color-cream: #F5EFEB;
+    --color-gold: #C5A059;
+    --color-gold-light: #E7D39F;
+    --color-gold-dark: #8C6D2B;
+    --color-burgundy: #4A0E1C;
+    --color-burgundy-deep: #2A0810;
+    --color-charcoal: #2A1E17;
+  }
+
+  body {
+    font-family: var(--font-cormorant);
+    background-color: #FAF7F2;
+    color: #2A1E17;
+    overflow-x: hidden;
+  }
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-serif-luxury {
+  font-family: var(--font-cormorant);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-sans-clean {
+  font-family: var(--font-sans);
+}
+
+/* Luxury gold foil shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #B8860B 0%,
+    #F3E5AB 30%,
+    #D4AF37 50%,
+    #F3E5AB 70%,
+    #B8860B 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 8s linear infinite;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #B8860B00, #C5A059, #F3E5AB, #C5A059, #B8860B00) 1;
+}
+
+/* Subtle Indian Royal Jaali Pattern background */
+.bg-jali {
+  background-color: #FAF7F2;
+  background-image: radial-gradient(#C5A059 0.65px, transparent 0.65px), radial-gradient(#C5A059 0.65px, #FAF7F2 0.65px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  background-opacity: 0.08;
+}
+
+/* Delicate floating petals animation */
+@keyframes petalFall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  85% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(60px, 110vh, 0) rotate(360deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-petal {
+  animation: petalFall linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Smooth fade and image scale */
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-slow-zoom {
+  animation: slowZoom 24s ease-in-out infinite;
+}
+
